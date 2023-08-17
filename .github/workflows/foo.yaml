@@ -1,0 +1,17 @@
+name: "Foo"
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          submodules: false
+      - name: Baz
+        run: yq .jobs .github/workflows/foo.yaml
